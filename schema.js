@@ -38,7 +38,7 @@ const RootQuery = new GraphQLObjectType({
     launches: {
       type: new GraphQLList(LaunchType),
       resolve: (parent, args) => {
-        return api.getAll();
+        return api.getLauches();
       },
     },
     launch: {
