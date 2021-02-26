@@ -19,6 +19,7 @@ const LaunchType = new GraphQLObjectType({
     launch_success: { type: GraphQLBoolean },
     rocket: { type: RocketType },
     links: { type: LinksType },
+    details: { type: GraphQLString },
   }),
 });
 
@@ -26,8 +27,8 @@ const LinksType = new GraphQLObjectType({
   name: "Link",
   fields: () => ({
     mission_patch_small: { type: GraphQLString },
-    video_link: {type: GraphQLString},
-    flickr_images: {type: new GraphQLList(GraphQLString)}
+    video_link: { type: GraphQLString },
+    flickr_images: { type: new GraphQLList(GraphQLString) },
   }),
 });
 
@@ -38,6 +39,36 @@ const RocketType = new GraphQLObjectType({
     rocket_id: { type: GraphQLString },
     rocket_name: { type: GraphQLString },
     rocket_type: { type: GraphQLString },
+    success_rate_pct: { type: GraphQLInt },
+    first_flight: { type: GraphQLString },
+    description: { type: GraphQLString },
+    diameter: {
+      type: new GraphQLObjectType({
+        name: "Diameter",
+        fields: () => ({
+          meters: { type: GraphQLString },
+          feet: { type: GraphQLString },
+        }),
+      }),
+    },
+    mass: {
+      type: new GraphQLObjectType({
+        name: "Mass",
+        fields: () => ({
+          kg: { type: GraphQLString },
+          lb: { type: GraphQLString },
+        }),
+      }),
+    },
+    height: {
+      type: new GraphQLObjectType({
+        name: "Height",
+        fields: () => ({
+          meters: { type: GraphQLString },
+          feet: { type: GraphQLString },
+        }),
+      }),
+    },
   }),
 });
 
