@@ -1,0 +1,27 @@
+/* .paginationButton {
+  cursor: pointer;
+  margin: 0 5px;
+  border: 1px solid #9ea7aa;
+  background-color: #fff;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 0.6;
+  transition: .1s all linear;
+} */
+.paginationButton:hover {
+  opacity: 1;
+}
+
+.buttonsWrapper {
+  position: absolute;
+  bottom: 50px;
+}
+
+.launchesWrapper {
+  width: 100%;
+  min-height: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
